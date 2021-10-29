@@ -8,6 +8,8 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          v-model.trim="search"
+          @input="changeSearch(search)"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
@@ -19,8 +21,11 @@
 <script>
 export default {
   name: "AppHeader",
+  props: ["changeSearch"],
   data() {
-    return {};
+    return {
+      search: "",
+      };
   },
 };
 </script>
